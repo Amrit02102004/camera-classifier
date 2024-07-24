@@ -81,7 +81,7 @@ class App:
 
         cv.imwrite(f'{class_num}/frame{self.counters[class_num-1]}.jpg', cv.cvtColor(frame, cv.COLOR_RGB2GRAY))
         img = PIL.Image.open(f'{class_num}/frame{self.counters[class_num - 1]}.jpg')
-        img.thumbnail((150, 150), PIL.Image.ANTIALIAS)
+        img.thumbnail((150, 150), PIL.Image.LANCZOS)
         img.save(f'{class_num}/frame{self.counters[class_num - 1]}.jpg')
 
         self.counters[class_num - 1] += 1
